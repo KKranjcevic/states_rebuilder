@@ -8,7 +8,7 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 import 'fake_classes/models.dart';
 
 final vanillaModel = RM.inject(() => VanillaModel());
-final streamVanillaModel = RM.injectStream(
+final Injected<VanillaModel> streamVanillaModel = RM.injectStream(
   () => Stream.periodic(Duration(seconds: 1),
       (n) => n < 3 ? VanillaModel(n) : VanillaModel(3)).take(6),
   watch: (model) => model?.counter,

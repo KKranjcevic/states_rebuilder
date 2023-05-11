@@ -16,7 +16,6 @@ import '../development_booster/injected_i18n/injected_i18n.dart';
 import '../development_booster/injected_scrolling/injected_scrolling.dart';
 import '../development_booster/injected_tab/injected_page_tab.dart';
 import '../development_booster/injected_theme/injected_theme.dart';
-import '../navigation/injected_navigator.dart';
 import 'common/consts.dart';
 import 'common/logger.dart';
 import 'legacy/injector.dart';
@@ -2340,42 +2339,4 @@ you had $_envMapLength flavors and you are defining ${impl.length} flavors.
   ///
   /// ### `debugPrintWhenRouted`: Optional [bool]. Defaults to false
   /// Print log a debug message when the state of the navigator is changed.
-  static InjectedNavigator injectNavigator({
-    //ORDER OF routes is important (/signin, /) home is not used even if skipHome slash is false
-    required Map<String, Widget Function(RouteData data)> routes,
-    String? initialLocation,
-    Widget Function(RouteData data)? unknownRoute,
-    Widget Function(Widget routerOutlet)? builder,
-    Page<dynamic> Function(MaterialPageArgument arg)? pageBuilder,
-    bool shouldUseCupertinoPage = false,
-    Widget Function(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondAnimation,
-      Widget child,
-    )?
-        transitionsBuilder,
-    Duration? transitionDuration,
-    Redirect? Function(RouteData data)? onNavigate,
-    bool? Function(RouteData? data)? onNavigateBack,
-    bool debugPrintWhenRouted = false,
-    bool ignoreUnknownRoutes = false,
-    List<NavigatorObserver> navigatorObservers = const <NavigatorObserver>[],
-  }) {
-    return createNavigator(
-      routes: routes,
-      unknownRoute: unknownRoute,
-      transitionsBuilder: transitionsBuilder,
-      transitionDuration: transitionDuration,
-      builder: builder,
-      initialLocation: initialLocation,
-      shouldUseCupertinoPage: shouldUseCupertinoPage,
-      onNavigate: onNavigate,
-      debugPrintWhenRouted: debugPrintWhenRouted,
-      pageBuilder: pageBuilder,
-      onNavigateBack: onNavigateBack,
-      ignoreUnknownRoutes: ignoreUnknownRoutes,
-      navigatorObservers: navigatorObservers,
-    );
-  }
 }

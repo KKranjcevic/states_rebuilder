@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
-import 'package:example/i18n.dart';
+import 'i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -94,7 +94,7 @@ void main() {
 }
 
 class MyApp extends TopStatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class MyApp extends TopStatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      home: const HomeWidget(),
+      home: HomeWidget(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -116,7 +116,7 @@ class MyApp extends TopStatelessWidget {
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -128,7 +128,7 @@ class HomeWidget extends StatelessWidget {
           OnReactive(
             () => DropdownButton<Locale>(
               value: i18n.locale,
-              onChanged: (Locale locale) {
+              onChanged: (Locale? locale) {
                 i18n.locale = locale;
               },
               items: i18n.supportedLocales
@@ -152,7 +152,7 @@ class HomeWidget extends StatelessWidget {
           children: [
             //For demo purpose, App is fractured to smaller widget.
             //Notes that widget are const,
-            const TextFieldWidget(),
+            TextFieldWidget(),
             const Spacer(),
             // ignore: prefer_const_constructors
             HelloNameWidget(), // Not const to make it rebuildable
@@ -171,7 +171,7 @@ class HomeWidget extends StatelessWidget {
 
 class RaisedButtonWidget extends StatelessWidget {
   const RaisedButtonWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -189,7 +189,7 @@ class RaisedButtonWidget extends StatelessWidget {
 
 class HelloNameWidget extends StatelessWidget {
   const HelloNameWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -226,7 +226,7 @@ class HelloNameWidget extends StatelessWidget {
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -251,7 +251,7 @@ class TextFieldWidget extends StatelessWidget {
 
 class StreamNameWidget extends StatelessWidget {
   const StreamNameWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
