@@ -46,7 +46,7 @@ part 'animate.dart';
 ///    ```
 ///  {@endtemplate}
 
-abstract class InjectedAnimation implements IObservable<double> {
+abstract mixin class InjectedAnimation implements IObservable<double> {
   ///Listen to the [InjectedAnimation] and rebuild when animation ticks.
   ///
   ///See [_RebuildAnimation.onAnimation]

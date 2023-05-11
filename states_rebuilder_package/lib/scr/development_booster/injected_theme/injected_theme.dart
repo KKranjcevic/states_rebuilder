@@ -36,7 +36,7 @@ import '../../state_management/rm.dart';
 ///   ```
 ///  {@endtemplate}
 
-abstract class InjectedTheme<KEY> {
+abstract mixin class InjectedTheme<KEY> {
   // KEY get state => getInjectedState(this);
   /// The current state  (theme name)
   KEY get state;

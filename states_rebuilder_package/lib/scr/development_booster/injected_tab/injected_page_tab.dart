@@ -83,7 +83,7 @@ part 'on_tab_builder.dart';
 ///  }
 /// ```
 ///  {@endtemplate}
-abstract class InjectedTabPageView implements IObservable<int> {
+abstract mixin class InjectedTabPageView implements IObservable<int> {
   ///Listen to the [InjectedTabPageView] and rebuild when tab index is changed.
   // late final rebuild = _RebuildTab(this);
   TabController? _tabController;

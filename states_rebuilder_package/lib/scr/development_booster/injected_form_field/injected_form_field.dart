@@ -35,7 +35,7 @@ part of 'injected_text_editing.dart';
 /// ```
 ///  {@endtemplate}
 
-abstract class InjectedFormField<T> implements IObservable<T> {
+abstract mixin class InjectedFormField<T> implements IObservable<T> {
   late final _baseFormField = this as _BaseFormField;
 
   ///Whether it passes the validation test

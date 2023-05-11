@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../../state_management/rm.dart';
 
 /// Used to manage app localization and internationalization
-abstract class InjectedI18N<I18N> {
+mixin InjectedI18N<I18N> {
   ///Get lists of supported locales
   List<Locale> get supportedLocales;
 

@@ -32,7 +32,7 @@ part 'on_crud_builder.dart';
 /// See: [InjectedCRUD.crud], [_CRUDService.read], [_CRUDService.create],
 /// [_CRUDService.update], [_CRUDService.delete],[InjectedCRUD.item],
 /// [_Item.inherited] and [OnCRUDBuilder]
-abstract class InjectedCRUD<T, P> implements Injected<List<T>> {
+abstract mixin class InjectedCRUD<T, P> implements Injected<List<T>> {
   _CRUDService<T, P>? _crud;
 
   ///To create Read Update and Delete

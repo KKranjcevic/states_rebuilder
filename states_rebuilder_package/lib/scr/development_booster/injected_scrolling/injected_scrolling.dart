@@ -10,7 +10,7 @@ part 'on_scroll._builder.dart';
 /// This injected state abstracts the best practices to come out with a
 /// simple, clean, and testable approach to control Scrollable view.
 ///
-abstract class InjectedScrolling implements IObservable<double> {
+abstract mixin class InjectedScrolling implements IObservable<double> {
   ///Listen to the [InjectedScrolling] and rebuild when scrolling data is changed.
   // late final rebuild = _RebuildScrolling(this);
 
