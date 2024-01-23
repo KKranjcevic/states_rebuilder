@@ -691,8 +691,7 @@ abstract class RM {
     SnapState<T>? Function(
       SnapState<T> currentSnap,
       SnapState<T> nextSnap,
-    )?
-        stateInterceptor,
+    )? stateInterceptor,
     SideEffects<T>? sideEffects,
     //
     String? debugPrintWhenNotifiedPreMessage,
@@ -960,8 +959,7 @@ abstract class RM {
     SnapState<List<T>>? Function(
       SnapState<List<T>> currentSnap,
       SnapState<List<T>> nextSnap,
-    )?
-        stateInterceptor,
+    )? stateInterceptor,
     //
     int undoStackLength = 0,
     DependsOn<List<T>>? dependsOn,
@@ -1124,8 +1122,7 @@ abstract class RM {
     SnapState<T>? Function(
       SnapState<T> currentSnap,
       SnapState<T> nextSnap,
-    )?
-        stateInterceptor,
+    )? stateInterceptor,
     SideEffects<T>? sideEffects,
     //
     int undoStackLength = 0,
@@ -1136,7 +1133,7 @@ abstract class RM {
     String? debugPrintWhenNotifiedPreMessage,
     Object? Function(T?)? toDebugString,
   }) {
-    return InjectedThemeImp(
+    return InjectedThemeImp<T>(
       lightThemes: lightThemes,
       darkThemes: darkThemes,
       themeModel: themeMode,
@@ -1270,8 +1267,7 @@ abstract class RM {
     SnapState<T>? Function(
       SnapState<T> currentSnap,
       SnapState<T> nextSnap,
-    )?
-        stateInterceptor,
+    )? stateInterceptor,
     SideEffects<T>? sideEffects,
     //
     DependsOn<T>? dependsOn,
@@ -2126,7 +2122,8 @@ you had $_envMapLength flavors and you are defining ${impl.length} flavors.
     // }
 
     if (_contextSet.isNotEmpty) {
-      final renderObject = _contextSet.last.findRenderObject();
+      final renderObject =
+          _contextSet.last.mounted ? _contextSet.last.findRenderObject() : null;
       if (renderObject != null && renderObject.attached != true) {
         _contextSet.removeLast();
         // ignore: recursive_getters

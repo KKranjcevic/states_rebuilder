@@ -351,6 +351,7 @@ void main() async {
         stateInterceptor: (currentSnap, nextSnap) {
           _snapState = currentSnap;
           _nextSnapState = nextSnap;
+          return null;
         },
       );
       (theme as InjectedThemeImp).isLinkedToTopStatelessWidget = true;
